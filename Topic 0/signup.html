@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Sign Up</title>
 	</head>
 	<body>
@@ -14,9 +15,10 @@
   		<p>E-mail:</p>
   			<input type="email" required placeholder="ex: globant@globant.com">
 		<p>Birth date:</p>
-  			<input type="date">
+  			<input type="date"> <!--Not supported in all browsers, using javascript should fix the issue-->
   		<p>Please select your favourite sport:</p>
   		<p> <select required>
+  				<option value="">Choose one</option>
   				<option value="soccer">Soccer</option>
   				<option value="basketball">Basketball</option>
   				<option value="volleyball">Volleyball</option>
