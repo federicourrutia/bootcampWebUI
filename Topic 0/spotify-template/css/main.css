@@ -172,10 +172,10 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     height: 90%;
     justify-content: center;
-    overflow-x: scroll;
+    overflow-y: scroll;
 }
 .content-gallery img {
     height: 189px;
