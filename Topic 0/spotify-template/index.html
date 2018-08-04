@@ -28,6 +28,7 @@
   </div>
   <div class="maincontainer">
     <div class="leftsidebar">
+      <div class="leftsidebar-playlists">
         <a href="#" class="active">Explore</a>
         <a href="#">Radio</a>
         <span class="leftsidebar-subtitle">Your Library</span>
@@ -59,6 +60,8 @@
         <a href="#">Playlist 4</a>
         <a href="#">Playlist 5</a>
         <a href="#">Playlist 6</a>
+      </div>
+        <div class="leftsidebar-newplaylist"><a href="#new-playlist"><img src="img/plus.png">Create new Playlist</a></div>
     </div>
     <div class="content">
       <h1 class="content-title">This is an example layout!</h1>
@@ -187,6 +190,33 @@
       </audio>
   </div>
   </div>
+   <div id="new-playlist" class="newplaylist-window-background">
+    <div class="newplaylist-window">
+    <div class="newplaylist-window-header">
+      <span class="newplaylist-window-headertitle">Create Playlist</span>
+    </div>
+    <div class="newplaylist-window-playlistname">
+      <span>Name</span>
+      <input type="text" required placeholder="Give your playlist a name.">
+    </div>
+    <div class="newplaylist-window-midcontainer">
+      <div class="newplaylist-window-uploadimage">
+        <span>Image</span>
+        <div class="newplaylist-window-uploadimage-container">
+          <img src="img/uploadimage.png">
+          <button class="newplaylist-window-uploadimage-button">Upload</button>
+        </div>
+      </div>
+      <div class="newplaylist-window-description">
+        <span>Description</span>
+        <input type="text" required placeholder="Give your playlist a catchy description.">
+      </div>
+    </div>
+    <div class="newplaylist-window-footer">
+      <a href="#gobacktomain"><button class="newplaylist-window-footer-buttoncancel">Cancel</button></a>
+      <a href="#""><button class="newplaylist-window-footer-buttoncreate">Create</button></a>
+    </div>
+    </div>
 </body>
 
 </html>
