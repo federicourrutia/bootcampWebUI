@@ -467,15 +467,8 @@ html, body {
     background: #535353; 
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
-/* media queries mobile popup
-.newplaylist-window {
-    display: flex;
-    flex-direction: column;
-    margin: 5% auto;
-    width: 80%;
-    height: 60%; */
-/* Media queries FOR MODAL WINDOW PENDING*/
-@media screen and (max-width: 1280px), (max-height: 800px){
+/* Media queries */
+@media screen and (max-width: 1000px), (max-height: 800px){
 .rightsidebar {
     display:none;
 }
@@ -554,6 +547,35 @@ html, body {
 }
 .player {
     width: 60px;
+}
+.newplaylist-window {
+    display: flex;
+    flex-direction: column;
+    margin: 5% auto;
+    width: 80%;
+    height: 80%; */
+}
+.newplaylist-window-uploadimage-container img {
+    width: 100px;
+    height: 100px;
+}
+.newplaylist-window-uploadimage-button {
+    font-size: 8px;
+    padding: 5px 5px;
+    margin: 0;
+}
+.newplaylist-window-midcontainer {
+    height: 50%;
+}
+.newplaylist-window-playlistname {
+    height: 20%;
+}
+.newplaylist-window-footer {
+    height: 20%;
+}
+.newplaylist-window-description input[type=text] {
+    font-size: 10px;
+    text-overflow: ellipsis;
 }
 /* ==========================================================================
    Helper classes
