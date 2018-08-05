@@ -15,6 +15,7 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 </head>
 
 <body>
@@ -177,18 +178,28 @@
     </aside>
   </div>
   <footer class="footernav">
-    <img class="album-mini" src="img/albumsample.jpg" alt="Album cover">
-    <div class="footernav-nowplaying">
-      <a class="nowplayingartist" href="#artistpage">Thrash Unreal</a>
-      <a class="nowplayingsong" href="#song">Against Me!</a>
+    <div class="footernav-nowplaying-container">
+      <img class="album-mini" src="img/albumsample.jpg" alt="Album cover">
+      <div class="footernav-nowplaying">
+        <a class="nowplayingartist" href="#artistpage">Thrash Unreal</a>
+        <a class="nowplayingsong" href="#song">Against Me!</a>
+      </div>
     </div>
-  <div class="footernav-audioplayer">
-      <audio class="player" controls="controls">
-        <source src="track.ogg" type="audio/ogg">
-        <source src="track.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-      </audio>
-  </div>
+    <div class="footernav-audioplayer">
+      <div class="footernav-audioplayer-buttons">
+        <i class="fas fa-step-backward"></i><i class="fas fa-play-circle"></i><i class="fas fa-step-forward"></i>
+      </div>
+      <div class="footernav-audioplayer-progress">
+        <span class="footernav-audioplayer-songelapsed">3:40</span>
+        <div class="progress">
+          <span class="completed-progress"></span>
+        </div>
+        <span class="footernav-audioplayer-songlength">4:20</span>
+      </div>
+    </div>
+    <div class="footernav-volumecontrol">
+      <i class="fas fa-volume-down"></i> <input type="range" min="1" max="100" value="0" class="volumecontrol-slider" id="volume">
+    </div>
   </footer>
    <div id="new-playlist" class="newplaylist-window-background">
     <div class="newplaylist-window">
