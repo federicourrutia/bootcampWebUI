@@ -8,7 +8,6 @@ $('#button').click(test);
 $.ajax({
         url: 'http://api.icndb.com/jokes/random',
         dataType: 'json',
-        type: 'GET',
         success: function(response) {
             $('#section').html(response.value['joke']);
         },
