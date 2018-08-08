@@ -1,0 +1,9 @@
+body {
+	text-align: center;
+}
+.hidden {
+	opacity: 0;
+}
+#searchResults {
+	float: right;
+}
