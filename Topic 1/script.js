@@ -15,7 +15,6 @@ $.ajax({
         url: 'http://api.icndb.com/jokes/random',
         dataType: 'json',
         success: function(response) {
-            console.log(response);
             $('#section').html(response.value['joke']);
         },
         error: function(error) {
@@ -25,16 +24,17 @@ $.ajax({
 
 
 function searchGit() {
+    let textinput = $('input').val();
     $.ajax({
         url: 'https://api.github.com/search/repositories',
         data: {
-            q: 'JavaScript',
+            q: textinput,
         },
         success: function(response) {
-           console.log(response.items)
-            response.items.forEach(function(e) {
-                $('#searchResults').append("<ul>" + e.name + "</ul>"); 
-            })
+                $('#searchResults').html("");
+                response.items.forEach(function(item) {
+                $('#searchResults').append("<ul>" + item.name + "</ul>"); 
+                })
         },
         error: function(error) {
             console.log('error')
