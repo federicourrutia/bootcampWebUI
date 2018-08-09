@@ -342,6 +342,12 @@ html, body {
     margin-top: 15px; 
     color: #a0a0a0;
 }
+.fa-pause-circle {
+    padding: 10px;
+    font-size: 35px;
+    margin-top: 15px; 
+    color: #a0a0a0;
+}
 .fa-step-backward, .fa-step-forward {
     padding: 20px;
     font-size: 15px;
@@ -353,10 +359,19 @@ html, body {
     font-size: 20px;
     color: #a0a0a0;
 }
-.footernav-audioplayer-buttons i:hover, .fa-volume-down:hover {
+.fa-volume-off {
+    padding: 20px;
+    font-size: 20px;
+    color: #a0a0a0;
+}
+.footernav-audioplayer-buttons i:hover, .fa-volume-down:hover, .fa-volume-off:hover {
     color: white;
+    cursor: pointer;
 }
 .fa-play-circle:hover {
+    transform: scale(1.1);
+}
+.fa-pause-circle:hover {
     transform: scale(1.1);
 }
 .footernav-audioplayer-progress {
@@ -379,7 +394,7 @@ html, body {
 .completed-progress {
   display: block;
   height: 100%;
-  width: 15%;
+  width: 0%;
   background-color: #1db954;
   border-radius: 5px;
 }
@@ -694,7 +709,10 @@ h3 {
 }
 .center {
     text-align: center;
-} 
+}
+audio {
+    display: none;
+}
 /* Scroll styling */
 ::-webkit-scrollbar {
     width: 5px;
@@ -869,7 +887,14 @@ h3 {
     .fa-volume-down {
         padding: 5px;
     }
+    .fa-volume-off {
+        padding: 5px;
+    }
     .fa-play-circle {
+        font-size: 25px;
+        margin-top: 5px;
+    }
+    .fa-pause-circle {
         font-size: 25px;
         margin-top: 5px;
     }

@@ -24,7 +24,9 @@
       <img class="topnav-dots" src="img/menudots.png" href="#">
     </div>
     <div class="topnav-search">
-      <input type="text" placeholder="Search">
+      <form action="searchresults.html" method="get">
+      <input name="q" class="searchinput" type="text" placeholder="Search">
+      </form>
     </div>
   </header>
   <div class="maincontainer">
@@ -192,19 +194,21 @@
     </div>
     <div class="footernav-audioplayer">
       <div class="footernav-audioplayer-buttons">
-        <i class="fas fa-step-backward"></i><i class="fas fa-play-circle"></i><i class="fas fa-step-forward"></i>
+        <i class="fas fa-step-backward"></i><i class="fas fa-play-circle" onclick="playAudio()"></i></span><i class="fas fa-step-forward"></i>
       </div>
       <div class="footernav-audioplayer-progress">
-        <span class="footernav-audioplayer-songelapsed">3:40</span>
+        <span class="footernav-audioplayer-songelapsed">0:00</span>
         <div class="progress">
           <span class="completed-progress"></span>
         </div>
-        <span class="footernav-audioplayer-songlength">4:20</span>
+        <span id="fullDuration" class="footernav-audioplayer-songlength">0:00</span>
       </div>
     </div>
     <div class="footernav-volumecontrol">
-      <i class="fas fa-volume-down"></i> <input type="range" min="1" max="100" value="0" class="volumecontrol-slider" id="volume">
+      <i class="fas fa-volume-down" onclick="muteAudio()"></i> <input id="volumeControl" type="range" min="0" max="100" step="1" oninput="setVolume(this.value)" onchange="setVolume(this.value)" value="100" class="volumecontrol-slider">
     </div>
+    <audio id="mytrack" class="audio" src="http://mus7.imperiometal.com/093cd42b-b990-4477-a191-c47391ff653a6b00.mp3" type="audio/mpeg" controls preload="metadata">
+    </audio>
   </footer>
    <div id="new-playlist" class="newplaylist-window-background">
     <div class="newplaylist-window">
@@ -233,5 +237,8 @@
       <a href="#"><button class="newplaylist-window-footer-buttoncreate">Create</button></a>
     </div>
     </div>
+  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
