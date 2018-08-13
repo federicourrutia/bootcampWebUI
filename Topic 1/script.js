@@ -35,6 +35,7 @@ function searchGit() {
                 response.items.forEach(function(item) {
                 $('#searchResults').append("<ul>" + item.name + "</ul>"); 
                 })
+                console.log(response);
         },
         error: function(error) {
             console.log('error')
