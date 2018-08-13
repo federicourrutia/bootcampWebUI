@@ -32,8 +32,8 @@ let songs = [
 		genreId: 1,
 		duration: '3:21',
 	},{
-		id:1,
-		name: 'Blacks',
+		id:2,
+		name: 'Sample',
 		artists: [1, 2],
 		albums: [2],
 		genreId: 1,
@@ -58,3 +58,24 @@ let playLists = [
 		songs: [1,2]
 	}
 ];
+
+let friends = [
+	{
+		id:1,
+		name: 'Test',
+		lastname: 'Name',
+		artists: [1,2],
+		albums: [2],
+		songs: [1],
+		image: 'https://cloudfront.dappered.com/wp-content/uploads/2016/08/Playlist_Header_large_posterized.jpg',
+	},{
+		id:2,
+		name: 'Second',
+		lastname: 'TestName',
+		artists: [2],
+		albums: [1],
+		songs: [2],
+		image: 'https://cloudfront.dappered.com/wp-content/uploads/2016/08/Playlist_Header_large_posterized.jpg',
+	}
+
+]

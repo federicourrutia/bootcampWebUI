@@ -1,5 +1,6 @@
 class Main {
-  constructor() {
+  constructor(parser) {
+    this.parser = parser;
     this.init();
   }
 
@@ -21,7 +22,14 @@ class Main {
     });
   }
 
+  appendFriends() {
+    friends.forEach((friend) => {
+      $('.rightsidebar').append(`<div class="rightsidebar-friendcontainer"><div class="rightsidebar-imgwrapper"><img src="img/profile.png" alt="Profile image"></div><div class="rightsidebar-wrapper"><a class="rightsidebar-friendsname" href="#FriendProfile">${friend.name} ${friend.lastname}</a><a class="rightsidebar-friendnowplaying" href="#Song">${this.parser.parseSongs(friend.songs)}</a><a class="rightsidebar-friendnowplayingartist" href="#Artist">${this.parser.parseArtists(friend.artists)}</a></div></div></div>`);
+    });
+  }
+
   init() {
+    this.appendFriends();
     this.appendPlaylists();
     let playerInstance = new Player();
     $('.fa-play-circle').click(playerInstance.playAudio);
@@ -39,5 +47,6 @@ class Main {
 
 $(document).ready(() => {
   $('.leftsidebar-playlists, .rightsidebar').animate ({ opacity: 1 }, 'slow');
-  new Main();
+  let parser = new Parser();
+  new Main(parser);
 });
