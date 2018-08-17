@@ -1,31 +1,59 @@
 class Main {
-  constructor(parser) {
-    this.parser = parser;
+  constructor() {
     this.init();
   }
-
-  createPlaylist() {
-    let playlistName = $('#newPlayListName').val();
-    let playlistDescription = $('#newPlayListDescription').val();
-    let playlistId = playLists[playLists.length - 1].id + 1;
-    let playlist = new Playlist(playlistId, playlistName, playlistDescription, "", "");
-
-    if (playlistName != '' & playlistDescription != '') {
-      playLists.push(playlist);
-      $('.leftsidebar-playlists').append(`<a href="#">${playlist.name}</a>`);
-    }
-  }
-
-  appendPlaylists() {
-    playLists.forEach((playlist) => {
-      $('.leftsidebar-playlists').append(`<a href="#">${playlist.name}</a>`);
-    });
-  }
-
+  // createPlaylist() {
+  //   let playlistName = $('#newPlayListName').val();
+  //   let playlistDescription = $('#newPlayListDescription').val();
+  //   let playlistId = playLists[playLists.length - 1].id + 1;
+  //   let playlist = new Playlist(playlistId, playlistName, playlistDescription, "", "");
+  //
+  //   if (playlistName != '' & playlistDescription != '') {
+  //     playLists.push(playlist);
+  //     $('.leftsidebar-playlists').append(`<a href="#">${playlist.name}</a>`);
+  //   }
+  // }
+  //
+  // appendPlaylists() {
+  //   playLists.forEach((playlist) => {
+  //     $('.leftsidebar-playlists').append(`<a href="#">${playlist.name}</a>`);
+  //   });
+  // }
+  //
   appendFriends() {
-    friends.forEach((friend) => {
-      $('.rightsidebar').append(`<div class="rightsidebar-friendcontainer"><div class="rightsidebar-imgwrapper"><img src="img/profile.png" alt="Profile image"></div><div class="rightsidebar-wrapper"><a class="rightsidebar-friendsname" href="#FriendProfile">${friend.name} ${friend.lastname}</a><a class="rightsidebar-friendnowplaying" href="#Song">${this.parser.parseSongs(friend.songs)}</a><a class="rightsidebar-friendnowplayingartist" href="#Artist">${this.parser.parseArtists(friend.artists)}</a></div></div></div>`);
-    });
+    let songString = '';
+    let artistString = '';
+    fetch('http://localhost:3000/friends')
+      .then((response) => {
+        return response.json();
+      })
+      .then((friends) => {
+        fetch('http://localhost:3000/songs')
+          .then((response) => {
+            return response.json();
+          })
+          .then((songs) => {
+            fetch('http://localhost:3000/artists')
+              .then((response) => {
+                return response.json();
+              })
+              .then((artists) => {
+                friends.forEach((friend) => {
+                  songs.forEach((song) => {
+                    if (friend.songs == song.id) {
+                    songString = `${song.name}`;
+                      artists.forEach((artist) => {
+                        if (song.artist == artist.id) {
+                        artistString = `${artist.name}`
+                        }
+                      })
+                    }
+                  })
+                    $('.rightsidebar').append(`<div class="rightsidebar-friendcontainer"><div class="rightsidebar-imgwrapper"><img src="${friend.image}" alt="Profile image"></div><div class="rightsidebar-wrapper"><a class="rightsidebar-friendsname" href="#FriendProfile">${friend.name}</a><a class="rightsidebar-friendnowplaying" href="#Song">${songString}</a><a class="rightsidebar-friendnowplayingartist" href="#Artist">${artistString}</a></div></div></div>`);
+                })
+              })
+          })
+      })
   }
 
   init() {
@@ -47,6 +75,5 @@ class Main {
 
 $(document).ready(() => {
   $('.leftsidebar-playlists, .rightsidebar').animate ({ opacity: 1 }, 'slow');
-  let parser = new Parser();
-  new Main(parser);
+  new Main();
 });
