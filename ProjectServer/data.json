@@ -1,0 +1,79 @@
+{
+  "albums": [
+    {"id":1,"name":"Fanoodle","artist":[5],"songs":[2,3,4,5]},
+    {"id":2,"name":"Yabox","artist":[3],"songs":[1]},
+    {"id":3,"name":"Gigashots","artist":[9],"songs":[6,7]},
+    {"id":4,"name":"Skyba","artist":[6],"songs":[8,9]},
+    {"id":5,"name":"Clandome Sampo","artist":[6],"songs":[10,11,12]}
+  ],
+  "songs": [
+    {"id":1,"name":"Clandestino","artist":[7], "albums":[2], "duration":"3:51"},
+    {"id":2,"name":"Back in black","artist":[9], "albums":[1], "duration":"4:15"},
+    {"id":3,"name":"Nature beat","artist":[1], "albums":[1], "duration":"5:03"},
+    {"id":4,"name":"Comfortably Numb","artist":[4], "albums":[1], "duration":"6:54"},
+    {"id":5,"name":"Is this love","artist":[6], "albums":[1], "duration":"3:57"},
+    {"id":6,"name":"Mover y rebotar","artist":[3], "albums":[3], "duration":"2:34"},
+    {"id":7,"name":"Paint it black","artist":[8], "albums":[3], "duration":"3:46"},
+    {"id":8,"name":"Felices los 4","artist":[7], "albums":[4], "duration":"4:51"},
+    {"id":9,"name":"God's plan","artist":[2,7], "albums":[4], "duration":"3:18"},
+    {"id":10,"name":"Wish u were here","artist":[4], "albums":[5], "duration":"4:53"},
+    {"id":11,"name":"Sugar","artist":[5], "albums":[5], "duration":"3:55"},
+    {"id":12,"name":"Random song","artist":[5], "albums":[5], "duration":"25:21"}
+  ],
+  "artists": [
+    {"id":1,"name":"Rebekah", "image": "http://www.rocketsmusik.com/wp-content/uploads/2016/09/Rebekah.jpg"},
+    {"id":2,"name":"Drake", "image": "https://thefader-res.cloudinary.com/private_images/w_760,c_limit,f_auto,q_auto:best/drake-views-from-the-6-cover-story-interview_ic4ox9/drake.jpg"},
+    {"id":3,"name":"Miway", "image": "https://t1.kn3.net/taringa/F/3/8/B/7/F/gaston2612/BFC.jpg"},
+    {"id":4,"name":"Pink Floyd", "image": "https://yt3.ggpht.com/a-/ACSszfGdp2j2pmcmmCZ7qoc6YSCJgSoYIu_Af_CANA=s900-mo-c-c0xffffffff-rj-k-no"},
+    {"id":5,"name":"Maroon 5", "image": "https://www.elpaisdelosjovenes.com/wp-content/uploads/2017/02/maroon-5-lanza-nuevo-videoclip-690x395.jpg"},
+    {"id":6,"name":"Bob Marley", "image": "https://simfalogic.news/wp-content/uploads/2018/06/bobmarley-480x480.jpg"},
+    {"id":7,"name":"Maluma", "image": "https://media.aweita.larepublica.pe/678x508/aweita/imagen/2018/02/08/noticia-masluma.jpg"},
+    {"id":8,"name":"The Rolling Stones", "image": "https://img.culturacolectiva.com/content/2016/03/rolling-stones-medium.jpg"},
+    {"id":9,"name":"AC/DC", "image": "http://www.indiehoy.com/wp-content/uploads/2018/08/acdc-highway-to-hell.jpg"},
+    {"id":10,"name":"Federico Gil", "image": "https://media.licdn.com/dms/image/C4D03AQE61EIb6PjJPA/profile-displayphoto-shrink_200_200/0?e=1539820800&v=beta&t=q5qMhynP9wxWRCWTkGBG32IuwvFba3BFJ3ss-6cCTRo"},
+    {"id":11,"name":"Claribel Medina", "image": "http://img.lagaceta.com.ar/fotos/notas/2010/11/2/40625359-Imagen-claribel-medina.jpg"}
+  ],
+  "genres": [
+    {"id":1,"name":"Rock", "image": "https://imgur.com/3hbcan0.png", "link": "#Rock"},
+    {"id":2,"name":"Indie/Alternative", "image": "https://imgur.com/4DLk4UH.png", "link": "#IndieAlternative"},
+    {"id":3,"name":"Latina", "image": "https://imgur.com/ZfP3H6z.png", "link": "#Latina"},
+    {"id":4,"name":"Hip Hop", "image": "https://imgur.com/vnDEFD6.png", "link": "#HipHop"},
+    {"id":5,"name":"Folk & Americana", "image": "https://imgur.com/2rV64OY.png", "link": "#FolkAmericana"},
+    {"id":6,"name":"Jazz", "image": "https://imgur.com/MNvGP6D.png", "link": "#Jazz"},
+    {"id":7,"name":"Country", "image": "https://imgur.com/ffAKb2D.png", "link": "#Country"},
+    {"id":8,"name":"Pop", "image": "https://imgur.com/tnLlyez.png", "link": "#Pop"},
+    {"id":9,"name":"Dance", "image": "https://imgur.com/PZlXRLv.png", "link": "#Dance"},
+    {"id":10,"name":"Classic", "image": "https://imgur.com/EJoWDFN.png", "link": "#Classic"},
+    {"id":11,"name":"Metal", "image": "https://imgur.com/F80EXg6.png", "link": "#Metal"},
+    {"id":12,"name":"Funk", "image": "https://imgur.com/tC0LtQ8.png", "link": "#Funk"},
+    {"id":13,"name":"Punk", "image": "https://imgur.com/Jt1rYOe.png", "link": "#Punk"},
+    {"id":14,"name":"Reggae", "image": "https://imgur.com/sRHLpTy.png", "link": "#Reggae"},
+    {"id":15,"name":"Blues", "image": "https://imgur.com/NMgThQY.png", "link": "#Blues"}
+  ],
+  "playlists": [
+    {"id":54,"name":"Best hits","songs":[6],"followers":3, "image": "https://www.thestudentplaylist.com/wp-content/uploads/2018/07/the_flaming_lips_greatest_hits_vol_1.jpg"},
+    {"id":1,"name":"Top 50","songs":[6],"followers":2, "image": "https://a10.gaanacdn.com/images/playlists/27/1038627/crop_480x480_1038627_1450031929.jpg"},
+    {"id":3,"name":"We Are Techno","songs":[6],"followers":3, "image": "https://i.pinimg.com/originals/8b/31/0d/8b310d99c8961aa0736188c3d09ac368.jpg"},
+    {"id":4,"name":"Claro que si","songs":[6],"followers":3, "image": "https://www.eldiario24.com/d24ar/fotos/uploads/editorial/2014/04/28/imagenes/39247_charango.jpg"}
+  ],
+  "friends": [
+    {"id":1,"name":"Mirche Zaccheus", "songs": [1], "image": "https://randomuser.me/api/portraits/men/27.jpg"},
+    {"id":2,"name":"Honora Milan", "songs": [2], "image": "https://randomuser.me/api/portraits/women/27.jpg"},
+    {"id":3,"name":"Carmelita Gopala", "songs": [3], "image": "https://randomuser.me/api/portraits/women/29.jpg"},
+    {"id":4,"name":"Simon Fausta", "songs": [4], "image": "https://randomuser.me/api/portraits/men/22.jpg"},
+    {"id":5,"name":"Ives Adannaya", "songs": [5], "image": "https://randomuser.me/api/portraits/men/20.jpg"},
+    {"id":6,"name":"Santeri Friduric", "songs": [6], "image": "https://randomuser.me/api/portraits/men/35.jpg"},
+    {"id":7,"name":"Tanisha Luca", "songs": [7], "image": "https://randomuser.me/api/portraits/women/35.jpg"},
+    {"id":8,"name":"Florence Thorben", "songs": [8], "image": "https://randomuser.me/api/portraits/women/40.jpg"}
+  ],
+  "audios": [
+    {"id":1,"name":"Master of Puppets", "artist": "Metallica", "image": "http://cdn.imperiometal.com/artists/m/metallica/albums/through-the-never-2.jpg", "source": "http://mus6.imperiometal.com/716358f6-74d2-496a-9573-de1b48c5c4106a00", "duration": "8:25"},
+    {"id":2,"name":"Whiskey In The Jar", "artist": "Metallica", "image": "http://cdn.imperiometal.com/artists/m/metallica/albums/garage-inc-2.jpg", "source": "http://mus7.imperiometal.com/093cd42b-b990-4477-a191-c47391ff653a6b00", "duration": "5:05"},
+    {"id":3,"name":"Highway To Hell", "artist": "AC/DC", "image": "http://cdn.imperiometal.com/artists/a/ac-dc/albums/highway-to-hell-2.jpg", "source": "http://mus6.imperiometal.com/aada95c7-da60-45d4-a251-cfed60a72a586a02", "duration": "3:28"},
+    {"id":4,"name":"Numb", "artist": "Linkin Park", "image": "http://cdn.imperiometal.com/artists/l/linkin-park/albums/meteora-2.jpg", "source": "http://mus10.imperiometal.com/959b92fa-544f-4ea4-a3ea-67aec7c6f69e6e00", "duration": "3:07"},
+    {"id":5,"name":"Burn It Down", "artist": "Linkin Park", "image": "http://cdn.imperiometal.com/artists/l/linkin-park/albums/living-things-2.jpg", "source": "http://mus10.imperiometal.com/acd7cd61-f9e0-49f1-8460-ca022020c01c6e00", "duration": "3:50"},
+    {"id":6,"name":"Killing In The Name", "artist": "Rage Against The Machine", "image": "http://cdn.imperiometal.com/artists/r/rage-against-the-machine/albums/rage-against-the-machine-2.jpg", "source": "http://mus11.imperiometal.com/814c5c61-c2da-4b2c-9f76-1ac8904140cb6f01", "duration": "5:14"},
+    {"id":7,"name":"Toxicity", "artist": "System Of A Down", "image": "http://cdn.imperiometal.com/artists/s/system-of-a-down/albums/toxicity-2.jpg", "source": "http://mus10.imperiometal.com/fc1f23fc-d7fb-4fef-a5dd-79dd0878ef2c6e03", "duration": "3:38"},
+    {"id":8,"name":"Rosenrot", "artist": "Rammstein", "image": "http://cdn.imperiometal.com/artists/r/rammstein/albums/rosenrot-2.jpg", "source": "http://mus6.imperiometal.com/88e871f1-0553-4025-8dfb-20f1d6d60c176a02", "duration": "3:54"}
+  ]
+}
