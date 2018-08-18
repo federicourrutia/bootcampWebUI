@@ -5,6 +5,9 @@ class Player {
 		this.audioElement = $('audio');
 		this.progressBar = $('.progress');
 		this.barProgress = $('.completed-progress');
+		this.songImg = $('.album-mini');
+		this.songArtist = $('.nowplayingartist');
+		this.songName = $('.nowplayingsong');
 		this.playAudio = this.playAudio.bind(this);
 		this.stopAudio = this.stopAudio.bind(this);
 		this.muteAudio = this.muteAudio.bind(this);
@@ -14,9 +17,20 @@ class Player {
 		this.onBarClick = this.onBarClick.bind(this);
 		this.nextSong = this.nextSong.bind(this);
 		this.previousSong = this.previousSong.bind(this);
+		this.getAudio();
 		this.currentSong = 0;
+		this.data;
 	}
 
+	getAudio() {
+		fetch('http://localhost:3000/audios')
+      .then((response) => {
+        return response.json();
+      })
+      .then((audios) => {
+				this.data = audios;
+			})
+	}
 	getMinutes() {
 		return parseInt(this.audioElement[0].duration / 60);
 	}
@@ -37,14 +51,6 @@ class Player {
 		this.audioElement.trigger('play');
 		this.updateTime = setInterval(this.update, 500);
 		let playCircle = $('.fa-play-circle');
-		let minutes = this.getMinutes();
-		let seconds = this.getSeconds();
-		if (seconds < 10) {
-			this.songLength.html(`${minutes}:0${seconds}`);
-		}
-		else {
-			this.songLength.html(`${minutes}:${seconds}`);
-		}
 		playCircle.removeClass('fa-play-circle').addClass('fa-pause-circle');
 		playCircle.unbind("click");
 		$('.fa-pause-circle').click(this.stopAudio);
@@ -61,14 +67,24 @@ class Player {
 
 	nextSong() {
 		let nextButton = $('.fa-step-forward');
-		this.currentSong++;
-		$('.audio').attr('src',`${this.currentSong}.mp3`);
+		if (this.currentSong < 7) {
+			this.currentSong++;
+		}
+		$('.audio').attr('src',`${this.data[this.currentSong].source}.mp3`);
+		this.songLength.html(`${this.data[this.currentSong].duration}`);
+		this.playAudio();
+		this.showAudioInfo();
 	}
 
 	previousSong() {
 		let previousButton = $('.fa-step-backward');
-		this.currentSong--;
-		$('.audio').attr('src',`${this.currentSong}.mp3`);
+		if (this.currentSong > 0) {
+			this.currentSong--;
+		}
+		$('.audio').attr('src',`${this.data[this.currentSong].source}.mp3`);
+		this.songLength.html(`${this.data[this.currentSong].duration}`);
+		this.playAudio();
+		this.showAudioInfo();
 	}
 
 	muteAudio() {
@@ -77,6 +93,12 @@ class Player {
 		volumeDown.removeClass('fa-volume-down').addClass('fa-volume-off');
 		volumeDown.unbind("click");
 		$('.fa-volume-off').click(this.unmuteAudio);
+	}
+
+	showAudioInfo() {
+		this.songImg.attr('src',`${this.data[this.currentSong].image}`);
+		this.songArtist.html(`${this.data[this.currentSong].artist}`);
+		this.songName.html(`${this.data[this.currentSong].name}`);
 	}
 
 	unmuteAudio() {

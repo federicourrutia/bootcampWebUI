@@ -58,7 +58,7 @@ class Main {
 
   init() {
     this.appendFriends();
-    this.appendPlaylists();
+    // this.appendPlaylists();
     let playerInstance = new Player();
     $('.fa-play-circle').click(playerInstance.playAudio);
     $('.fa-volume-down').click(playerInstance.muteAudio);
