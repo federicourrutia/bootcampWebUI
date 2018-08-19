@@ -17,9 +17,9 @@ class Player {
 		this.onBarClick = this.onBarClick.bind(this);
 		this.nextSong = this.nextSong.bind(this);
 		this.previousSong = this.previousSong.bind(this);
+		this.data;
 		this.getAudio();
 		this.currentSong = 0;
-		this.data;
 	}
 
 	getAudio() {
@@ -31,6 +31,7 @@ class Player {
 				this.data = audios;
 			})
 	}
+
 	getMinutes() {
 		return parseInt(this.audioElement[0].duration / 60);
 	}

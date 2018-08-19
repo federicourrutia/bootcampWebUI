@@ -205,6 +205,7 @@ html, body {
     margin: 0;
     font-size: 35px;
     border-bottom: solid 1px #a0a0a0;
+    box-sizing: border-box;
 }
 .content-separator {
     margin: 0;

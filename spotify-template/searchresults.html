@@ -44,6 +44,7 @@
         <a href="#">Videos</a>
         <a href="#">Podcasts</a>
         <span class="leftsidebar-subtitle">Playlists</span>
+        <div class="leftsidebar-userplaylists"></div>
       </div>
         <div class="leftsidebar-newplaylist">
             <div class="leftsidebar-newplaylist-icon"><i class="fas fa-plus-circle"></i></div>
@@ -87,10 +88,10 @@
   </div>
   <footer class="footernav">
     <div class="footernav-nowplaying-container">
-      <img class="album-mini" src="img/albumsample.jpg" alt="Album cover">
+      <img class="album-mini" src="http://cdn.imperiometal.com/artists/m/metallica/albums/through-the-never-2.jpg" alt="Album cover">
       <div class="footernav-nowplaying">
-        <a class="nowplayingartist" href="#artistpage">Thrash Unreal</a>
-        <a class="nowplayingsong" href="#song">Against Me!</a>
+        <a class="nowplayingartist" href="#artistpage">Metallica</a>
+        <a class="nowplayingsong" href="#song">Master of Puppets</a>
       </div>
     </div>
     <div class="footernav-audioplayer">
@@ -102,46 +103,46 @@
         <div class="progress">
           <span class="completed-progress"></span>
         </div>
-        <span id="fullDuration" class="footernav-audioplayer-songlength">0:00</span>
+        <span id="fullDuration" class="footernav-audioplayer-songlength">8:25</span>
       </div>
     </div>
     <div class="footernav-volumecontrol">
       <i class="fas fa-volume-down"></i> <input id="volumeControl" type="range" min="0" max="100" step="1" value="100" class="volumecontrol-slider">
     </div>
-    <audio id="mytrack" class="audio" src="http://mus7.imperiometal.com/093cd42b-b990-4477-a191-c47391ff653a6b00.mp3" type="audio/mpeg" controls preload="metadata"></audio>
+    <audio id="mytrack" class="audio" src="http://mus6.imperiometal.com/716358f6-74d2-496a-9573-de1b48c5c4106a00.mp3" type="audio/mpeg" controls preload="metadata">
+    </audio>
   </footer>
- <div id="new-playlist" class="newplaylist-window-background">
-  <div class="newplaylist-window">
-    <div class="newplaylist-window-header">
-      <span class="newplaylist-window-headertitle">Create Playlist</span>
-    </div>
-    <div class="newplaylist-window-playlistname">
-      <span>Name</span>
-      <input type="text" maxlength="100" required placeholder="Give your playlist a name." id="newPlayListName">
-    </div>
-    <div class="newplaylist-window-midcontainer">
-      <div class="newplaylist-window-uploadimage">
-        <span>Your Image</span>
-        <div class="newplaylist-window-uploadimage-container">
-          <img src="img/uploadimage.png">
-          <button class="newplaylist-window-uploadimage-button">Choose Image</button>
-        </div>
-      </div>
-      <div class="newplaylist-window-description">
-        <span>Description</span>
-        <input type="text" maxlength="300" required placeholder="Give your playlist a catchy description." id="newPlayListDescription">
-      </div>
-    </div>
-    <div class="newplaylist-window-footer">
-      <a href="#gobacktomain"><button class="newplaylist-window-footer-buttoncancel">Cancel</button></a>
-      <a href="#"><button class="newplaylist-window-footer-buttoncreate">Create</button></a>
-    </div>
-  </div>
-  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/searchresults.js"></script>
-  <script src="js/playlist.js"></script>
-  <script src="js/player.js"></script>
+  <div id="new-playlist" class="newplaylist-window-background">
+   <div class="newplaylist-window">
+     <div class="newplaylist-window-header">
+       <span class="newplaylist-window-headertitle">Create Playlist</span>
+     </div>
+     <div class="newplaylist-window-playlistname">
+       <span>Name</span>
+       <input type="text" maxlength="100" required placeholder="Give your playlist a name." id="newPlayListName">
+     </div>
+     <div class="newplaylist-window-midcontainer">
+       <div class="newplaylist-window-uploadimage">
+         <span>Your Image</span>
+         <div class="newplaylist-window-uploadimage-container">
+           <img src="img/uploadimage.png">
+           <button class="newplaylist-window-uploadimage-button">Choose Image</button>
+         </div>
+       </div>
+       <div class="newplaylist-window-description">
+         <span>Description</span>
+         <input type="text" maxlength="300" required placeholder="Give your playlist a catchy description." id="newPlayListDescription">
+       </div>
+     </div>
+     <div class="newplaylist-window-footer">
+       <a href="#gobacktomain"><button class="newplaylist-window-footer-buttoncancel">Cancel</button></a>
+       <a href="#"><button class="newplaylist-window-footer-buttoncreate">Create</button></a>
+     </div>
+   </div>
+ <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+ <script src="js/main.js"></script>
+ <script src="js/player.js"></script>
+ <script src="js/searchresults.js"></script>
 </body>
 </html>
