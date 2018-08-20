@@ -10,79 +10,15 @@ class Main {
     this.init();
   }
 
-  getPlaylists() {
-    return new Promise((resolve) => {
-      fetch('http://localhost:3000/playlists')
-        .then((response) => {
-          return response.json();
-        })
-        .then((playlists) => {
-          this.playlists = playlists;
-          resolve();
-        })
-    });
-  }
-
-  getArtists() {
-    return new Promise((resolve) => {
-      fetch('http://localhost:3000/artists')
-        .then((response) => {
-          return response.json();
-        })
-        .then((artists) => {
-          this.artists = artists;
-          resolve();
-        })
-    });
-  }
-
-  getFriends() {
-    return new Promise((resolve) => {
-      fetch('http://localhost:3000/friends')
-        .then((response) => {
-          return response.json();
-        })
-        .then((friends) => {
-          this.friends = friends;
-          resolve();
-        })
-    });
-  }
-
-  getSongs() {
-    return new Promise((resolve) => {
-      fetch('http://localhost:3000/songs')
-        .then((response) => {
-          return response.json();
-        })
-        .then((songs) => {
-          this.songs = songs;
-          resolve();
-        })
-    });
-  }
-
-  getUser() {
-    return new Promise((resolve) => {
-      const userId = localStorage.getItem('userId');
-      fetch(`http://localhost:3000/user/${userId}`)
-        .then((response) => {
-          return response.json();
-        })
-        .then((user) => {
-            this.user = user;
-            resolve();
-          })
-    })
-  }
-
   createPlaylist() {
-        let name = $('#newPlayListName').val();
-        let description = $('#newPlayListDescription').val();
-        let id = this.playlists[this.playlists.length - 1].id + 1;
-        let followers = '1';
-        let image = 'https://i.imgur.com/HAKs6OO.png';
-        const data = { id, name, description, followers, image };
+    this.api.getPlaylists().then((playlists) => {
+      let name = $('#newPlayListName').val();
+      let description = $('#newPlayListDescription').val();
+      let id = playlists[playlists.length - 1].id + 1;
+      let songs = [];
+      let followers = '1';
+      let image = 'https://i.imgur.com/HAKs6OO.png';
+      let data = { id, name, description, songs, followers, image };
         if (name != '' & description != '') {
           fetch('http://localhost:3000/playlists', {
             method: 'POST',
@@ -100,27 +36,29 @@ class Main {
                   'Content-Type': 'application/json'
                 }
               })
-              .then((response) => {
+              .then(() => {
                 this.appendPlaylists();
-                console.log('Success:', response);
               })
               .catch((error) => {
                 console.error('Error:', error);
               })
           })
-          .catch(error => console.error('Error:', error))
+          .catch((error) => {
+            console.error('Error:', error);
+          });
         }
         else {
-          alert('Playlist name and/or description cannot be empty. Please fill both fields and try again.')
+          alert('Playlist name and/or description cannot be empty. Please fill both fields and try again.');
         }
+    });
   }
 
   appendPlaylists() {
     this.leftsidebarPlaylists.html("");
     let playlistName = '';
-    this.getPlaylists().then(() => {
+    this.api.getPlaylists().then((playlists) => {
       this.user.playlists.forEach((userPlaylist) => {
-        this.playlists.forEach((playlist) => {
+        playlists.forEach((playlist) => {
           if (userPlaylist == playlist.id) {
             playlistName = `${playlist.name}`
           }
@@ -149,10 +87,17 @@ class Main {
   }
 
   init() {
-    Promise.all([this.getPlaylists(), this.getArtists(), this.getFriends(), this.getSongs(), this.getUser()]).then(() => {
+    this.api = new Api();
+    this.api.getData().then((response) => {
+      this.playlists = response[0];
+      this.artists = response[1];
+      this.friends = response[2];
+      this.songs = response[3];
+      this.user = response[4];
       this.appendPlaylists();
       this.appendFriends();
     });
+
     let playerInstance = new Player();
     $('.fa-play-circle').click(playerInstance.playAudio);
     $('.fa-volume-down').click(playerInstance.muteAudio);

@@ -14,59 +14,7 @@ class SearchResults {
     this.init();
 	}
 
-  fetchSongs() {
-    return new Promise((resolve) => {
-      fetch('http://localhost:3000/songs')
-        .then((response) => {
-          return response.json();
-        })
-        .then((songs) => {
-          this.songs = songs;
-          resolve();
-        })
-    });
-  }
-
-  fetchArtists() {
-    return new Promise((resolve) => {
-      fetch('http://localhost:3000/artists')
-        .then((response) => {
-          return response.json();
-        })
-        .then((artists) => {
-          this.artists = artists;
-          resolve();
-        })
-    });
-  }
-
-  fetchAlbums() {
-    return new Promise((resolve) => {
-      fetch('http://localhost:3000/albums')
-        .then((response) => {
-          return response.json();
-        })
-        .then((albums) => {
-          this.albums = albums;
-          resolve();
-        })
-    });
-  }
-
-  fetchPlaylists() {
-    return new Promise((resolve) => {
-      fetch('http://localhost:3000/playlists')
-        .then((response) => {
-          return response.json();
-        })
-        .then((playlists) => {
-          this.playlists = playlists;
-          resolve();
-        })
-    });
-  }
-
-  getSongs() {
+  renderSongs() {
     let artistString = '';
     let albumString = '';
     let filteredSongs = this.songs.filter((song) => {
@@ -95,7 +43,7 @@ class SearchResults {
     }
   }
 
-  getArtists() {
+  renderArtists() {
     let filteredArtists = this.artists.filter((artist) => {
       return artist.name.match(this.queryParams);
     });
@@ -109,7 +57,7 @@ class SearchResults {
     }
   }
 
-  getAlbums() {
+  renderAlbums() {
     let artistString = '';
     let filteredAlbums = this.albums.filter((album) => {
       return album.name.match(this.queryParams);
@@ -129,7 +77,7 @@ class SearchResults {
     }
   }
 
-  getPlaylists() {
+  renderPlaylists() {
     let filteredPlaylists = this.playlists.filter((playlist) => {
       return playlist.name.match(this.queryParams);
     });
@@ -144,11 +92,18 @@ class SearchResults {
   }
 
   init() {
-    Promise.all([this.fetchSongs(), this.fetchArtists(), this.fetchAlbums(), this.fetchPlaylists()]).then(() => {
-    this.getSongs();
-    this.getArtists();
-    this.getAlbums();
-    this.getPlaylists();
+    this.api = new Api();
+    this.api.getData().then((response) => {
+      this.playlists = response[0];
+      this.artists = response[1];
+      this.friends = response[2];
+      this.songs = response[3];
+      this.user = response[4];
+      this.albums = response[5];
+      this.renderSongs();
+      this.renderArtists();
+      this.renderAlbums();
+      this.renderPlaylists();
     });
   }
 }
