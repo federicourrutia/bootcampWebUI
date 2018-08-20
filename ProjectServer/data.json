@@ -346,6 +346,7 @@
     {
       "id": 1,
       "name": "Best hits",
+      "description": "Best hits from 2017",
       "songs": [
         6
       ],
@@ -355,6 +356,7 @@
     {
       "id": 2,
       "name": "Top 50",
+      "description": "Top fifty",
       "songs": [
         6
       ],
@@ -364,6 +366,7 @@
     {
       "id": 3,
       "name": "We Are Techno",
+      "description": "Best Techno",
       "songs": [
         6
       ],
@@ -373,6 +376,7 @@
     {
       "id": 4,
       "name": "Claro que si",
+      "description": "Charango",
       "songs": [
         6
       ],
@@ -381,8 +385,9 @@
     },
     {
       "id": 5,
-      "name": "Test",
-      "description": "Test",
+      "name": "Testing",
+      "description": "Testing",
+      "songs": [],
       "followers": "1",
       "image": "https://i.imgur.com/HAKs6OO.png"
     }
