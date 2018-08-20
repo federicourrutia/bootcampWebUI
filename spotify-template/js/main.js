@@ -5,7 +5,8 @@ class Main {
     this.friends;
     this.songs;
     this.user;
-    this.leftsidebarPlaylists = $('.leftsidebar-userplaylists');
+    this.leftsidebarPlaylists = $('.leftsidebar-playlists');
+    this.leftsidebarUserPlaylists = $('.userplaylist')
     this.createPlaylist = this.createPlaylist.bind(this);
     this.init();
   }
@@ -54,16 +55,19 @@ class Main {
   }
 
   appendPlaylists() {
-    this.leftsidebarPlaylists.html("");
+    this.leftsidebarUserPlaylists.html("");
     let playlistName = '';
     this.api.getPlaylists().then((playlists) => {
       this.user.playlists.forEach((userPlaylist) => {
         playlists.forEach((playlist) => {
           if (userPlaylist == playlist.id) {
             playlistName = `${playlist.name}`
+            if (playlistName.length > 10) {
+            playlistName = `${playlistName.substring(0,15)}...`
+            }
           }
         })
-        this.leftsidebarPlaylists.append(`<div>${playlistName}</div>`);
+        this.leftsidebarPlaylists.append(`<div class="userplaylist">${playlistName}</div>`);
       })
     })
   }
