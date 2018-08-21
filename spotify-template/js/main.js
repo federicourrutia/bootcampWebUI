@@ -5,8 +5,7 @@ class Main {
     this.friends;
     this.songs;
     this.user;
-    this.leftsidebarPlaylists = $('.leftsidebar-playlists');
-    this.leftsidebarUserPlaylists = $('.userplaylist')
+    this.leftsidebarUserPlaylists = $('.leftsidebar-userplaylists')
     this.createPlaylist = this.createPlaylist.bind(this);
     this.init();
   }
@@ -67,7 +66,7 @@ class Main {
             }
           }
         })
-        this.leftsidebarPlaylists.append(`<div class="userplaylist">${playlistName}</div>`);
+        this.leftsidebarUserPlaylists.append(`<div class="userplaylist">${playlistName}</div>`);
       })
     })
   }
