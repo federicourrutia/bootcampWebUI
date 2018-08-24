@@ -48,7 +48,14 @@ export default class Api {
       })
   }
 
+  getGenres() {
+    return fetch('http://localhost:3000/genres')
+      .then((response) => {
+        return response.json();
+      })
+  }
+
   getData() {
-    return Promise.all([this.getPlaylists(), this.getArtists(), this.getFriends(), this.getSongs(), this.getUser(), this.getAlbums(), this.getAudio()]);
+    return Promise.all([this.getPlaylists(), this.getArtists(), this.getFriends(), this.getSongs(), this.getUser(), this.getAlbums(), this.getAudio(), this.getGenres()]);
   }
 }

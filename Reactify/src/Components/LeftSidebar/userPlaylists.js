@@ -10,7 +10,7 @@ class UserPlaylists extends Component {
         {
           this.props.user.playlists.map((userPlaylist) => {
             this.props.playlists.forEach((playlist) => {
-              if (userPlaylist == playlist.id) {
+              if (userPlaylist === playlist.id) {
                 playlistName = `${playlist.name}`
                 if (playlistName.length > 15) {
                 playlistName = `${playlistName.substring(0,15)}...`
@@ -18,7 +18,7 @@ class UserPlaylists extends Component {
               }
             })
           return (
-            <div className="userplaylist">{playlistName}</div>
+            <div className="userplaylist" key={userPlaylist}>{playlistName}</div>
           )
           })
         }

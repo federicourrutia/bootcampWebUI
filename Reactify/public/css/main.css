@@ -87,9 +87,15 @@ html, body, #root, .root {
     background: #212121;
     margin: 0;
 }
+.menu {
+  cursor: pointer;
+}
 .wrapper {
   height: 100%;
   background: #212121;
+}
+.wrap {
+  height: 100%;
 }
 .topnav input[type=text] {
     padding: 2px;
@@ -147,11 +153,6 @@ html, body, #root, .root {
     color: #a0a0a0;
     text-decoration: none;
     padding: 5px 0;
-    overflow: hidden;
-    max-width: 15ch;
-    text-overflow: ellipsis;
-    text-decoration: none;
-    white-space: nowrap;
 }
 .leftsidebar-playlists a:visited {
     color: #a0a0a0;
@@ -892,13 +893,13 @@ audio {
         width: 30%;
     }
     .leftsidebar {
-        width: 20%;
+        width: 15%;
     }
     .content {
-        width: 60%;
+        width: 70%;
     }
     .rightsidebar {
-        width: 20%;
+        width: 15%;
     }
 }
 @media screen and (max-width: 1024px) {

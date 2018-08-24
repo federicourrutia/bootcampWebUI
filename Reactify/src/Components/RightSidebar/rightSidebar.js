@@ -8,6 +8,8 @@ class RightSidebar extends Component {
 
     return (
       <div className="rightsidebar">
+        <span className="rightsidebar-subtitle">Friends Activity</span>
+        <hr className="rightsidebar-separator"/>
           {
             this.props.friends.map((friend) => {
               this.props.songs.forEach((song) => {

@@ -51,13 +51,17 @@ class FooterPlayer extends Component {
 	}
 
 	nextSong() {
-    this.i++;
-    this.setState({ isPlaying: false, currentSong: this.props.data[this.i] });
+    if (this.i < 7) {
+      this.i++;
+      this.setState({ isPlaying: false, currentSong: this.props.data[this.i] });
+    }
 	}
 
 	previousSong() {
-    this.i--;
-    this.setState({ isPlaying: false, currentSong: this.props.data[this.i] });
+    if (this.i > 0) {
+      this.i--;
+      this.setState({ isPlaying: false, currentSong: this.props.data[this.i] });
+    }
 	}
 
 	muteAudio() {
