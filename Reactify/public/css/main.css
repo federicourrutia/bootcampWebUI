@@ -82,10 +82,12 @@ textarea {
    ========================================================================== */
 html, body, #root, .root {
     height: 100%;
+    min-width: 340px;
     user-select: none;
     font-family: Helvetica, Arial, sans-serif;
     background: #212121;
     margin: 0;
+    overflow: hidden;
 }
 .menu {
   cursor: pointer;
@@ -138,10 +140,12 @@ html, body, #root, .root {
     box-sizing: border-box;
 }
 .leftsidebar-playlists {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     height: 90%;
     overflow-y: scroll;
+    overflow-x: hidden;
     padding: 20px 30px;
 }
 .leftsidebar-playlists .active {
@@ -456,17 +460,13 @@ html, body, #root, .root {
     left: 0;
     background: rgba(0,0,0,0.8);
     z-index: 1;
-    opacity:0;
     -webkit-transition: opacity 400ms ease-in;
     -moz-transition: opacity 400ms ease-in;
     transition: opacity 400ms ease-in;
-    pointer-events: none;
+    pointer-events: auto;
     color: #a0a0a0;
 }
-.newplaylist-window-background:target {
-    opacity:1;
-    pointer-events: auto;
-}
+
 .newplaylist-window {
     display: flex;
     flex-direction: column;
@@ -736,6 +736,7 @@ audio {
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40px;
+  cursor: pointer;
 }
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
@@ -926,7 +927,7 @@ audio {
     }
     .search-header{
         width: 100%;
-}
+    }
 }
 @media screen and (max-width: 823px) {
     .rightsidebar {
@@ -970,11 +971,24 @@ audio {
         width: 20%;
     }
 }
+@media only screen and (max-width : 600px) {
+  .nowplayingartist, .nowplayingsong {
+      margin-left: 5px;
+    }
+    .footernav-nowplaying a {
+        font-size: 10px;
+    }
+}
+@media only screen and (max-height : 700px) {
+    .footernav {
+      height: 15%;
+    }
+    .maincontainer {
+      height: 80%;
+    }
 @media only screen and (max-width : 480px) {
     .album-mini {
-        height: 35px;
-        width: 35px;
-        margin-left: 10px;
+        display: none;
     }
     .rightsidebar {
         display:none;
@@ -1029,10 +1043,11 @@ audio {
         height: 10%;
     }
     .footernav-audioplayer {
-        width: 40%
+        width: 65%
     }
     .footernav-nowplaying-container {
-        width: 35%;
+        margin-left: 5px;
+        width: 10%;
     }
     .footernav-volumecontrol {
         width: 25%;
