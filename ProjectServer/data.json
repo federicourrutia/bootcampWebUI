@@ -11,7 +11,8 @@
         3,
         4,
         5
-      ]
+      ],
+      "image": "https://i.imgur.com/KPdp0MV.png"
     },
     {
       "id": 2,
@@ -21,7 +22,8 @@
       ],
       "songs": [
         1
-      ]
+      ],
+      "image": "https://i.imgur.com/KPdp0MV.png"
     },
     {
       "id": 3,
@@ -32,7 +34,8 @@
       "songs": [
         6,
         7
-      ]
+      ],
+      "image": "https://i.imgur.com/KPdp0MV.png"
     },
     {
       "id": 4,
@@ -43,7 +46,8 @@
       "songs": [
         8,
         9
-      ]
+      ],
+      "image": "https://i.imgur.com/KPdp0MV.png"
     },
     {
       "id": 5,
@@ -55,7 +59,8 @@
         10,
         11,
         12
-      ]
+      ],
+      "image": "https://i.imgur.com/KPdp0MV.png"
     }
   ],
   "songs": [
