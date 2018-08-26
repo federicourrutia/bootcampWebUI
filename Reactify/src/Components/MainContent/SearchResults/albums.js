@@ -22,7 +22,7 @@ class Albums extends Component {
               }
             })
             return (
-            <div className="album"><img src={album.image} alt="Album image"/><div className="search-info"><p>{album.name}</p><p>{artistString}</p></div></div>
+            <div className="album" key={album.id}><img src={album.image} alt="Album"/><div className="search-info"><p>{album.name}</p><p>{artistString}</p></div></div>
             )
           })
         }

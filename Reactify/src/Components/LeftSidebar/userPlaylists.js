@@ -4,7 +4,6 @@ class UserPlaylists extends Component {
 
   render() {
     let playlistName = '';
-
     return (
       <div>
         {
@@ -17,9 +16,9 @@ class UserPlaylists extends Component {
                 }
               }
             })
-          return (
-            <div className="userplaylist" key={userPlaylist}>{playlistName}</div>
-          )
+            return (
+              <div className="userplaylist" key={userPlaylist}>{playlistName}{playlistName = ''}</div>
+            )
           })
         }
       </div>

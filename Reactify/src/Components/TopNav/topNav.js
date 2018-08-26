@@ -7,7 +7,9 @@ class TopNav extends Component {
     let input = document.getElementById('searchinput');
     input.addEventListener('keydown', function(e) {
       if (e.keyCode == 13) {
-      this.props.setSearch(input.value);
+        if (input.value.length > 0) {
+          this.props.setSearch(input.value);
+        }
       }
     }.bind(this))
   }
@@ -17,7 +19,7 @@ class TopNav extends Component {
     return (
         <header className="topnav">
           <div className="topnav-menu">
-            <a href="index.html"><img className="App-logo" src={logo} alt="Reactify logo"/></a>
+            <a onClick={() => this.props.setExplore()}><img className="App-logo" src={logo} alt="Reactify logo"/></a>
           </div>
           <div className="topnav-search">
             <input id="searchinput" type="text" placeholder="Search"/>

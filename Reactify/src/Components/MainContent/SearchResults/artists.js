@@ -16,7 +16,7 @@ class Artists extends Component {
         {
           filteredArtists.map((artist) => {
             return (
-            <div className="artist" key={artist.id}><img src={artist.image} alt="Artist photo"/><div className="search-info"><p>{artist.name}</p></div></div>
+            <div className="artist" key={artist.id}><img src={artist.image} alt="Artist"/><div className="search-info"><p>{artist.name}</p></div></div>
             )
           })
         }

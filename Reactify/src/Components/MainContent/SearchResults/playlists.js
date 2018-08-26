@@ -16,7 +16,7 @@ class Playlists extends Component {
         {
           filteredPlaylists.map((playlist) => {
             return (
-            <div className="playlist"><img src={playlist.image} alt="Playlist image"/><div className="search-info"><p>{playlist.name}</p><p>{playlist.followers} followers</p></div></div>
+            <div className="playlist" key={playlist.id}><img src={playlist.image} alt="Playlist"/><div className="search-info"><p>{playlist.name}</p><p>{playlist.followers} followers</p></div></div>
             )
           })
         }

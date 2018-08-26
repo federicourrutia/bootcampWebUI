@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Explore from './explore';
-import SearchResults from './searchResults';
+import Explore from './Explore/explore';
+import SearchResults from './SearchResults/searchResults';
 
 class MainContent extends Component {
 
