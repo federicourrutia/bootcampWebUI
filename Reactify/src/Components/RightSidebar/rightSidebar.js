@@ -43,24 +43,24 @@ class RightSidebar extends Component {
                     })
                   }
                 })
-              return (
-              <div className="rightsidebar-friendcontainer" key={friend.id}>
-                <div className="rightsidebar-imgwrapper">
-                  <img src={friend.image} alt="Profile"/>
+                return (
+                <div className="rightsidebar-friendcontainer" key={friend.id}>
+                  <div className="rightsidebar-imgwrapper">
+                    <img src={friend.image} alt="Profile"/>
+                  </div>
+                  <div className="rightsidebar-wrapper">
+                    <a className="rightsidebar-friendsname" href="#FriendProfile">{friend.name}</a>
+                    <a className="rightsidebar-friendnowplaying" href="#Song">{songString}</a>
+                    <a className="rightsidebar-friendnowplayingartist" href="#Artist">{artistString}</a>
+                  </div>
                 </div>
-                <div className="rightsidebar-wrapper">
-                  <a className="rightsidebar-friendsname" href="#FriendProfile">{friend.name}</a>
-                  <a className="rightsidebar-friendnowplaying" href="#Song">{songString}</a>
-                  <a className="rightsidebar-friendnowplayingartist" href="#Artist">{artistString}</a>
-                </div>
-              </div>
-              )
+                )
               })
-          }
+            }
         </div>
         :
         <div className="wrap">
-        <div className="loader center"><span></span></div>
+          <div className="loader center"><span></span></div>
         </div>
       }
       </aside>

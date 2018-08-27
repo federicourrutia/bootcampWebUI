@@ -51,14 +51,14 @@ class LeftSidebar extends Component {
             <UserPlaylists user={this.state.user} playlists={this.state.playlists}/>
           </div>
           <div className="leftsidebar-newplaylist" onClick={() => this.openModal()}>
-              <div className="leftsidebar-newplaylist-icon"><i className="fas fa-plus-circle"></i></div>
-              <a><span className="leftsidebar-newplaylist-text">New Playlist</span></a>
+            <div className="leftsidebar-newplaylist-icon"><i className="fas fa-plus-circle"></i></div>
+            <a><span className="leftsidebar-newplaylist-text">New Playlist</span></a>
           </div>
           <Modal playlists={this.state.playlists} user={this.state.user} show={this.state.showModal} close={this.closeModal} updatePlaylists={this.updatePlaylists}/>
         </div>
         :
         <div className="wrap">
-        <div className="loader center"><span></span></div>
+          <div className="loader center"><span></span></div>
         </div>
       }
       </aside>

@@ -25,14 +25,14 @@ class Modal extends Component {
         return response.json();
       })
       .then((playlists) => {
-      let name = this.state.name;
-      let description =  this.state.description;
-      let id = playlists[playlists.length - 1].id + 1;
-      let songs = [];
-      let followers = '1';
-      let image = 'https://i.imgur.com/HAKs6OO.png';
-      let data = { id, name, description, songs, followers, image };
-        if (name != '' & description != '') {
+        let name = this.state.name;
+        let description =  this.state.description;
+        let id = playlists[playlists.length - 1].id + 1;
+        let songs = [];
+        let followers = '1';
+        let image = 'https://i.imgur.com/HAKs6OO.png';
+        let data = { id, name, description, songs, followers, image };
+        if (name !== '' & description !== '') {
           fetch('http://localhost:3000/playlists', {
             method: 'POST',
             body: JSON.stringify(data),
@@ -40,31 +40,31 @@ class Modal extends Component {
               'Content-Type': 'application/json'
             }
           })
-          .then(() => {
-            this.props.user.playlists.push(id);
-            fetch(`http://localhost:3000/user/${this.props.user.id}`, {
+            .then(() => {
+              this.props.user.playlists.push(id);
+              fetch(`http://localhost:3000/user/${this.props.user.id}`, {
                 method: 'PUT',
                 body: JSON.stringify(this.props.user),
                 headers: {
                   'Content-Type': 'application/json'
                 }
               })
-              .then(() => {
-                this.props.close();
-                this.props.updatePlaylists();
-              })
-              .catch((error) => {
-                console.error('Error:', error);
-              })
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-          });
-        }
-        else {
-          alert('Playlist name and/or description cannot be empty. Please fill both fields and try again.');
-        }
-    });
+                .then(() => {
+                  this.props.close();
+                  this.props.updatePlaylists();
+                })
+                .catch((error) => {
+                  console.error('Error:', error);
+                })
+            })
+            .catch((error) => {
+              console.error('Error:', error);
+            });
+          }
+          else {
+            alert('Playlist name and/or description cannot be empty. Please fill both fields and try again.');
+          }
+      });
   }
 
 

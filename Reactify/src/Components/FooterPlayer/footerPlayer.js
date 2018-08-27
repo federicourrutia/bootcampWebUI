@@ -130,12 +130,11 @@ class FooterPlayer extends Component {
           <div className="footernav-volumecontrol">
             <i className={this.state.isMuted ? "fas fa-volume-off" : "fas fa-volume-down"} onClick={() => { this.muteAudio() }}/><input id="volumeControl" type="range" min="0" max="100" step="1" className="volumecontrol-slider" onChange={(event) => this.setVolume(event)}/>
           </div>
-          <audio ref={(audio) => this.audioRef = audio} id="mytrack" src={`${this.state.currentSong.source}.mp3`} type="audio/mpeg" controls preload="metadata">
-          </audio>
+          <audio ref={(audio) => this.audioRef = audio} id="mytrack" src={`${this.state.currentSong.source}.mp3`} type="audio/mpeg" controls preload="metadata"/>
         </footer>
         :
         <div className="wrap">
-        <div className="loader center"><span></span></div>
+          <div className="loader center"><span></span></div>
         </div>
       }
       </div>

@@ -10,13 +10,13 @@ class Artists extends Component {
   }
 
   componentDidMount() {
-      ArtistsApi.getArtistsByQuery(this.props.queryParams).then((response) => {
-        let queryParams = new RegExp(this.props.queryParams, 'i');
-        let filteredArtists = response.filter((artist) => {
-          return artist.name.match(queryParams);
-        });
-        this.setState({artists: filteredArtists});
-      })
+    ArtistsApi.getArtistsByQuery(this.props.queryParams).then((response) => {
+      let queryParams = new RegExp(this.props.queryParams, 'i');
+      let filteredArtists = response.filter((artist) => {
+        return artist.name.match(queryParams);
+      });
+      this.setState({artists: filteredArtists});
+    })
   }
 
   componentDidUpdate(prevProps) {

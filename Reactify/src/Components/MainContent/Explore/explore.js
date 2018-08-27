@@ -15,7 +15,7 @@ class Explore extends Component {
       this.setState({genres: response});
       this.setState({hasData: true});
    })
- }
+  }
 
   render() {
     return (
@@ -24,24 +24,24 @@ class Explore extends Component {
         this.state.hasData
         ?
         <div className="wrap">
-        <div className="content-title">
-          <span className="content-title-text">Genre list - index</span>
-        </div>
-        <div className="content-gallery">
-        {
-          this.state.genres.map((genre) => {
-            return (
-              <a key={genre.id}><img src={genre.image} alt="Genre"/></a>
-            )
-          })
-        }
-        </div>
+          <div className="content-title">
+            <span className="content-title-text">Genre list - index</span>
+          </div>
+          <div className="content-gallery">
+          {
+            this.state.genres.map((genre) => {
+              return (
+                <a key={genre.id}><img src={genre.image} alt="Genre"/></a>
+              )
+            })
+          }
+          </div>
         </div>
         :
         <div className="loader center"><span></span></div>
-    }
-  </div>
-  )
+      }
+      </div>
+    )
   }
 }
 

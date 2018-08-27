@@ -12,7 +12,7 @@ class UserPlaylists extends Component {
               if (userPlaylist === playlist.id) {
                 playlistName = `${playlist.name}`
                 if (playlistName.length > 15) {
-                playlistName = `${playlistName.substring(0,15)}...`
+                  playlistName = `${playlistName.substring(0,15)}...`
                 }
               }
             })

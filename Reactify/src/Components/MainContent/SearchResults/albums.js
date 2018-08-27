@@ -10,13 +10,13 @@ class Albums extends Component {
   }
 
   componentDidMount() {
-      AlbumsApi.getAlbumsByQuery(this.props.queryParams).then((response) => {
-        let queryParams = new RegExp(this.props.queryParams, 'i');
-        let filteredAlbums = response.filter((album) => {
-          return album.name.match(queryParams);
-        });
-        this.setState({albums: filteredAlbums});
-      })
+    AlbumsApi.getAlbumsByQuery(this.props.queryParams).then((response) => {
+      let queryParams = new RegExp(this.props.queryParams, 'i');
+      let filteredAlbums = response.filter((album) => {
+        return album.name.match(queryParams);
+      });
+      this.setState({albums: filteredAlbums});
+    })
   }
 
   componentDidUpdate(prevProps) {
