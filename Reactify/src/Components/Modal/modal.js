@@ -51,6 +51,7 @@ class Modal extends Component {
               })
                 .then(() => {
                   this.props.close();
+                  this.setState({name: '', description: ''});
                   this.props.updatePlaylists();
                 })
                 .catch((error) => {
