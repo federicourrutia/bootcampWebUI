@@ -31,7 +31,7 @@ class Explore extends Component {
         {
           this.state.genres.map((genre) => {
             return (
-              <a href={genre.link} key={genre.id}><img src={genre.image} alt="Genre"/></a>
+              <a key={genre.id}><img src={genre.image} alt="Genre"/></a>
             )
           })
         }

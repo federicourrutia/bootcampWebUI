@@ -5,4 +5,11 @@ export default class ArtistsApi {
         return response.json();
       })
   }
+
+  static getArtistsByQuery(query) {
+    return fetch(`http://localhost:3000/artists?q=${query}`)
+      .then((response) => {
+        return response.json();
+      })
+  }
 }

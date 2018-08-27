@@ -1,21 +1,46 @@
 import React, { Component } from 'react';
+import AlbumsApi from '../../../Api/albums-api';
 
 class Albums extends Component {
+  constructor() {
+    super();
+    this.state = {
+      albums: '',
+    }
+  }
+
+  componentDidMount() {
+      AlbumsApi.getAlbumsByQuery(this.props.queryParams).then((response) => {
+        let queryParams = new RegExp(this.props.queryParams, 'i');
+        let filteredAlbums = response.filter((album) => {
+          return album.name.match(queryParams);
+        });
+        this.setState({albums: filteredAlbums});
+      })
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.queryParams !== this.props.queryParams) {
+      AlbumsApi.getAlbumsByQuery(this.props.queryParams).then((response) => {
+        let queryParams = new RegExp(this.props.queryParams, 'i');
+        let filteredAlbums = response.filter((album) => {
+          return album.name.match(queryParams);
+        });
+        this.setState({albums: filteredAlbums});
+      })
+    }
+  }
 
   render() {
     let artistString = '';
-    let filteredAlbums = this.props.albums.filter((album) => {
-      return album.name.match(this.props.queryParams);
-    });
-
-    if (filteredAlbums.length > 0) {
+    if (this.state.albums.length > 0) {
       return (
         <div className="content-search albums">
           <div className="search-header">
             <h3 className="content-search-subtitle">Albums</h3>
           </div>
         {
-          filteredAlbums.map((album) => {
+          this.state.albums.map((album) => {
             this.props.artists.forEach((artist) => {
               if (album.artist == artist.id) {
                 artistString = `${artist.name}`;

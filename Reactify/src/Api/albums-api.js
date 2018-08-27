@@ -5,4 +5,11 @@ export default class AlbumsApi {
         return response.json();
       })
   }
+
+  static getAlbumsByQuery(query) {
+    return fetch(`http://localhost:3000/albums?q=${query}`)
+      .then((response) => {
+        return response.json();
+      })
+  }
 }

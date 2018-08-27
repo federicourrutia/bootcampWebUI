@@ -5,4 +5,11 @@ export default class PlaylistsApi {
         return response.json();
       })
   }
+
+  static getPlaylistsByQuery(query) {
+    return fetch(`http://localhost:3000/playlists?q=${query}`)
+      .then((response) => {
+        return response.json();
+      })
+  }
 }

@@ -5,4 +5,11 @@ export default class SongsApi {
         return response.json();
       })
   }
+
+  static getSongsByQuery(query) {
+    return fetch(`http://localhost:3000/songs?q=${query}`)
+      .then((response) => {
+        return response.json();
+      })
+  }
 }

@@ -18,7 +18,6 @@ class App extends Component {
   }
 
   setSearch(value) {
-    value = new RegExp(value, 'i');
     this.setState({content: 'search', queryParams: value});
   }
 

@@ -1,15 +1,41 @@
 import React, { Component } from 'react';
+import SongsApi from '../../../Api/songs-api';
 
 class Songs extends Component {
+  constructor() {
+    super();
+    this.state = {
+      songs: '',
+    }
+  }
+
+  componentDidMount() {
+    SongsApi.getSongsByQuery(this.props.queryParams).then((response) => {
+      let queryParams = new RegExp(this.props.queryParams, 'i');
+      let filteredSongs = response.filter((song) => {
+        return song.name.match(queryParams);
+      });
+      this.setState({songs: filteredSongs});
+    })
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.queryParams !== this.props.queryParams) {
+      SongsApi.getSongsByQuery(this.props.queryParams).then((response) => {
+        let queryParams = new RegExp(this.props.queryParams, 'i');
+        let filteredSongs = response.filter((song) => {
+          return song.name.match(queryParams);
+        });
+        this.setState({songs: filteredSongs});
+      })
+    }
+  }
 
   render() {
     let artistString = '';
     let albumString = '';
-    let filteredSongs = this.props.songs.filter((song) => {
-      return song.name.match(this.props.queryParams);
-    });
 
-    if (filteredSongs.length > 0) {
+    if (this.state.songs.length > 0) {
       return (
         <div className="content-top" key="1">
           <div className="content-album-header">
@@ -19,7 +45,7 @@ class Songs extends Component {
             <p className="head-info"><i className="far fa-clock"></i></p>
           </div>
         {
-            filteredSongs.map((song) => {
+            this.state.songs.map((song) => {
               artistString = '';
               this.props.artists.map((artist) => {
                 return song.artist.forEach((songArtist) => {
